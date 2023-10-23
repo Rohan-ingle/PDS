@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 from textblob import TextBlob
 
-with open('H:\Programming\PDS\project\knn_model.pkl', 'rb') as model_file:
+with open("knn_model.pkl", 'rb') as model_file:
     sentiment_model = pickle.load(model_file)
 
 st.title("Sentiment Analysis App")
@@ -29,4 +29,4 @@ if input_sentence:
 
 st.sidebar.title("About")
 st.sidebar.write("This is a simple sentiment analysis web app.")
-st.sidebar.write("It uses a pre-trained model to analyze the sentiment of your input sentence.")
+st.sidebar.write("It uses a self-trained model to analyze the sentiment of your input sentence.")
