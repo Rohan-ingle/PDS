@@ -3,6 +3,5 @@ pickle5
 scikit-learn
 matplotlib
 google-api-python-client
-sklearn.feature_extraction.text
 re
 pandas
