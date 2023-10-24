@@ -1,3 +1,6 @@
 TextBlob
 pickle5
 scikit-learn
+matplotlib
+googleapiclient.discovery
+sklearn.feature_extraction.text
