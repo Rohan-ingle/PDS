@@ -3,5 +3,4 @@ pickle5
 scikit-learn
 matplotlib
 google-api-python-client
-re
 pandas
