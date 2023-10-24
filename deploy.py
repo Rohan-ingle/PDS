@@ -127,7 +127,7 @@ analysis_option = st.sidebar.selectbox(
 
 if analysis_option == "Input Text":
     st.title('Sentiment Analysis of Text with kNN/TextBlob')
-    st.write("Enter a tweet, and we'll predict its sentiment!")
+    st.write("Enter a text, and we'll predict its sentiment!")
 
     input_tweet = st.text_input('Enter Text')
     sentiment_analysis_method = st.selectbox(
