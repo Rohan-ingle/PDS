@@ -2,7 +2,7 @@ TextBlob
 pickle5
 scikit-learn
 matplotlib
-googleapiclient.discovery
+google-api-python-client
 sklearn.feature_extraction.text
 re
 pandas
