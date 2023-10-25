@@ -133,7 +133,7 @@ def get_video_comments(video_url, comment_limit=0, use_textblob=False):
                 prediction = loaded_knn_model2.predict(tfidf_text)
                 sentiment_label = 'neutral' if prediction[0] == 0 else 'positive' if prediction[0] == 1 else 'negative'
                 sentiments.append(sentiment_label)
-    st.write(f"Total comments tokanized: {len(comments)}")
+    st.write(f"Total comments tokenized: {len(comments)}")
     if comment_limit==0:
         return comments, sentiments
     else:
@@ -162,10 +162,10 @@ if analysis_option == "Input Text":
 
             sentiment_analysis_method2 = st.selectbox(
                 "Select model:",
-                ( "accuracy = 0.67","accuracy = 0.40")
+                ( "Model 1 : accuracy = 0.67","Model 1 : accuracy = 0.40")
             )
 
-            if sentiment_analysis_method2 == "accuracy = 0.40" :
+            if sentiment_analysis_method2 == "Model 1 : accuracy = 0.40" :
 
                 tfidf_input = tfidf_vectorizer1.transform([filter(input_tweet)])
                 prediction = loaded_knn_model1.predict(tfidf_input)
