@@ -8,6 +8,10 @@ import re
 import matplotlib.pyplot as plt
 from textblob import TextBlob 
 
+st.set_page_config(
+    page_title="Sentiment Analysis App"
+)
+
 with open('knn_model1.pkl', 'rb') as knn_file1:
     loaded_knn_model1 = pickle.load(knn_file1)
 
