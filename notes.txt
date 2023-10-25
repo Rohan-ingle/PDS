@@ -1,3 +1,0 @@
-- add a text filter (clean input text) //done
-- add a video recommendation using youtube api //done
-- change visuals //done
