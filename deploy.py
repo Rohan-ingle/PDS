@@ -14,19 +14,19 @@ st.set_page_config(
 )
 ##################### LOAD MODELS #####################
 
-with open(r'models\tfidf_model.pkl', 'rb') as temp_tfidf:
+with open(r'tfidf_model.pkl', 'rb') as temp_tfidf:
     tfidf = pickle.load(temp_tfidf)
 
-with open(r'models\knn_model.pkl', 'rb') as temp_knn_model:
+with open(r'knn_model.pkl', 'rb') as temp_knn_model:
     knn_model = pickle.load(temp_knn_model)
 
-with open(r'models\dt_model.pkl', 'rb') as temp_dt_model:
+with open(r'dt_model.pkl', 'rb') as temp_dt_model:
     dt_model = pickle.load(temp_dt_model)
 
-with open(r'models\lr_model.pkl', 'rb') as temp_lr_model:
+with open(r'lr_model.pkl', 'rb') as temp_lr_model:
     lr_model = pickle.load(temp_lr_model)
 
-with open(r'models\nb_model.pkl', 'rb') as temp_nb_model:
+with open(r'nb_model.pkl', 'rb') as temp_nb_model:
     nb_model = pickle.load(temp_nb_model)
 ####################### MODEL DICTIONARY #######################
 
