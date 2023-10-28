@@ -1,7 +1,7 @@
 pickle5
 google-api-python-client
 matplotlib
-re
 plotly
 streamlit
 pandas
+textblob
