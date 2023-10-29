@@ -10,7 +10,8 @@ import plotly.graph_objects as go
 ##################### INITIALIZE UI #####################
 
 st.set_page_config(
-    page_title="Sentiment Analysis App"
+    page_title="Sentiment Analysis App",
+    page_icon="youtube.png"
 )
 ##################### LOAD MODELS #####################
 
@@ -139,41 +140,37 @@ def get_video_comments(video_url, comment_limit=0, run_all_models=False):
 
     while request:
         response = request.execute()
-        if comment_limit == 0 or len(comments) >= comment_limit:
+        for item in response['items']:
+            if comment_limit == 0 or len(comments) < comment_limit:
+                comment = item['snippet']['topLevelComment']['snippet']
+                comments.append(filter(comment['textDisplay']))
+            else:
+                break
+
+        if len(comments) >= comment_limit:
             break
-        else:
-            a = 0
-            for item in response['items']:
-                if a < comment_limit:
-                    comment = item['snippet']['topLevelComment']['snippet']
-                    comments.append(filter(comment['textDisplay']))
-                    a = a + 1
 
         request = youtube.commentThreads().list_next(request, response)
 
-    sentiment_by_model = {"KNN" : [],
-            "Decision Tree": [],
-            "Logistic Regression" : [],
-            "Naive Bayes" : []}
+    sentiment_by_model = {"KNN": [], "Decision Tree": [], "Logistic Regression": [], "Naive Bayes": []}
 
     if run_all_models:
-
         for model in input_text_sub_options:
             model_ = model_dict[model]
             for comment in comments:
                 sentiment, _ = process_by(model_, comment)
                 sentiment_by_model[model].append(sentiment)
 
-
         st.write(f"Total comments tokenized: {len(comments)}") 
         return comments, sentiment_by_model       
 
     else:
         for comment in comments:
-            sentiment,_ = process_by(model_dict[sentiment_analysis_method2], comment)
+            sentiment, _ = process_by(model_dict[sentiment_analysis_method2], comment)
             sentiment_by_model[sentiment_analysis_method2].append(sentiment)
         st.write(f"Total comments tokenized: {len(comments)}")
         return comments, sentiment_by_model
+
     
 
 # Create the Streamlit app interface
