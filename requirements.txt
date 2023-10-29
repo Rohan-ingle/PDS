@@ -5,3 +5,4 @@ plotly
 streamlit
 pandas
 textblob
+scikit-learn
